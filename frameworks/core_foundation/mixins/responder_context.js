@@ -154,7 +154,7 @@ SC.ResponderContext = {
     if (!common) common = last;
 
     // Cleanup old first responder
-    this._notifyWillLoseFirstResponder(current, current, common, evt);
+    this._notifyWillLoseFirstResponder(responder, current, common, evt);
     if (current) current.set('isFirstResponder', NO);
 
     // Set new first responder.  If new firstResponder does not have its
