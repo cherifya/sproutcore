@@ -58,6 +58,6 @@ SC.TableCellView = SC.View.extend({
     
   _sctcv_layoutDidChange: function(sender, key, value, rev) {
     var pv = this.get('parentView');
-    SC.run( function() { pv.layoutChildViews(); });
+    SC.run( function() { if(pv) pv.layoutChildViews(); });
   }
 });
