@@ -331,7 +331,7 @@ SC.RenderContext = SC.Builder.create(
     }
 
     // flush jQuery buffers
-    jQuery.Buffer.flush();
+    //jQuery.Buffer.flush();
 
 
     // now cleanup element...
@@ -626,7 +626,7 @@ SC.RenderContext = SC.Builder.create(
   */
   resetClassNames: function() {
     if (this._elem) {
-      this.$().resetClassNames();
+      this.$().removeClass();
       return this;
     }
 
@@ -708,12 +708,6 @@ SC.RenderContext = SC.Builder.create(
     @returns {Hash|SC.RenderContext} styles hash or receiver
   */
   styles: function(styles, cloneOnModify) {
-    if (this._elem) {
-      if (styles) {
-        this.$().resetStyles().css(styles);
-      }
-      return this.$().styles();
-    }
 
     var attr, regex, match;
     if (styles === undefined) {

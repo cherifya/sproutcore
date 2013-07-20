@@ -98,7 +98,7 @@ SC.mixin({
 
 // let apps ignore the regular onReady handling if they need to
 if(!SC.suppressOnReady) {
-  jQuery.event.special.ready._default = SC.onReady.done;
+  $(document).ready(SC.onReady.done);
 }
 
 // default to app mode.  When loading unit tests, this will run in test mode
